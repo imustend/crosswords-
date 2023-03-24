@@ -9,3 +9,19 @@ format pliku z danymi (crossword.crwds):
 	[x pierwszej litery hasła] [y pierwszej litery hasła] [kierunek hasła (v - pionowe, h - poziome)]
 	[hasło]
 ) * liczba haseł
+
+# gra:
+
+aby zrobić coś, wpisz odpowiednią komendę i naciśnij enter
+
+odpowiedź:
+a [x pierwszej litery hasła] [y pierwszej litery hasła] [kierunek hasła (v - pionowe, h - poziome)] [odpowiedz]
+
+sprawdzenie:
+c
+
+zakoncz gre:
+f
+
+wyjście:
+q
