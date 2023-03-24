@@ -1,0 +1,3 @@
+/home/imustend/CLionProjects/one/cmake-build-debug/CMakeFiles/one.dir
+/home/imustend/CLionProjects/one/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/imustend/CLionProjects/one/cmake-build-debug/CMakeFiles/rebuild_cache.dir
