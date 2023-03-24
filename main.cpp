@@ -90,7 +90,24 @@ public:
 		}
 
 		std::cout << std::endl;
+	}
 
+	void printCorrect()
+	{
+		for (size_t i = 0; i < height; i++)
+		{
+			for (size_t j = 0; j < width; j++)
+			{
+				std::cout << correct[i][j] << " ";
+			}
+
+			std::cout << std::endl;
+		}
+
+		std::cout << std::endl;
+	}
+
+	void printquestion() {
 		for (auto &q : questions)
 		{
 			std::cout << q.x + 1 << " " << q.y + 1 << " " << (q.vertical ? "v" : "h") << " " << q.question << std::endl;
@@ -116,10 +133,12 @@ int main()
 	auto c = Crossword(file);
 
 	bool game = true;
+	size_t checkcount = 0;
 
 	while (game)
 	{
 		c.print();
+		c.printquestion();
 
 		char what;
 
@@ -214,6 +233,15 @@ int main()
 				std::cout << "yuor answer: " << word << std::endl;
 				std::cout << "the answer is " << (correctWord == word ? "correct" : "wrong") << std::endl << std::endl;
 			}
+
+			checkcount++;
+		}
+		else if(what == 'f') {
+			c.print();
+			c.printCorrect();
+			std::cout << "check coutn: " << checkcount << std::endl;
+
+			game = false;
 		}
 		else if (what == 'q')
 		{
