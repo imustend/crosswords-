@@ -175,6 +175,46 @@ int main()
 				}
 			}
 		}
+		else if(what == 'c') {
+			for(auto queston : c.questions) {
+				std::string word;
+				std::string correctWord;
+
+				if(queston.vertical) {
+					for(int i = 0;; i++) {
+						if(queston.x >= c.width)
+							break;
+
+						if(queston.y + i >= c.height)
+							break;
+
+						if(c.current[queston.y + i][queston.x] == '#')
+							break;
+
+						word += c.current[queston.y + i][queston.x];
+						correctWord += c.correct[queston.y + i][queston.x];
+					}
+				} else {
+					for(int i = 0;; i++) {
+						if(queston.x + i >= c.width)
+							break;
+
+						if(queston.y >= c.height)
+							break;
+
+						if(c.current[queston.y][queston.x + i] == '#')
+							break;
+
+						word += c.current[queston.y][queston.x + i];
+						correctWord += c.correct[queston.y][queston.x + i];
+					}
+				}
+
+				std::cout << queston.question << std::endl;
+				std::cout << "yuor answer: " << word << std::endl;
+				std::cout << "the answer is " << (correctWord == word ? "correct" : "wrong") << std::endl << std::endl;
+			}
+		}
 		else if (what == 'q')
 		{
 			game = false;
